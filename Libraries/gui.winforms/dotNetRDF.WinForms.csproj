@@ -1,19 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0D1B8423-44F6-4ACE-8055-58D66E574F9D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VDS.RDF.GUI.WinForms</RootNamespace>
-    <AssemblyName>dotNetRDF.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
+    <TargetFramework>net40</TargetFramework>
+    <FileUpgradeFlags />
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
@@ -31,144 +22,93 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\dotnetrdf\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AssemblyTitle>dotNetRDF.WinForms</AssemblyTitle>
+    <Company>Visual Design Studios</Company>
+    <Product>dotNetRDF.WinForms</Product>
+    <Description>A Library of GUI Forms and Components for Windows Forms</Description>
+    <Copyright>Copyright © dotNetRDF Project 2011</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\dotNetRDF.WinForms.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DocumentationFile>bin\$(Configuration)\dotNetRDF.WinForms.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="ExportResultSetOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExportResultSetOptionsForm.Designer.cs">
-      <DependentUpon>ExportResultSetOptionsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResultSetViewerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResultSetViewerForm.Designer.cs">
-      <DependentUpon>ResultSetViewerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Events.cs" />
-    <Compile Include="ExportGraphOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExportGraphOptionsForm.Designer.cs">
-      <DependentUpon>ExportGraphOptionsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OpenConnectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenConnectionForm.Designer.cs">
-      <DependentUpon>OpenConnectionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VisualiseGraphForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisualiseGraphForm.Designer.cs">
-      <DependentUpon>VisualiseGraphForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphViewerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GraphViewerForm.Designer.cs">
-      <DependentUpon>GraphViewerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\core\net40\dotNetRDF.csproj">
-      <Project>{BFBAC159-1E60-4D03-8ACA-D34E31EB83BF}</Project>
-      <Name>dotNetRDF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExportResultSetOptionsForm.resx">
-      <DependentUpon>ExportResultSetOptionsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResultSetViewerForm.resx">
-      <DependentUpon>ResultSetViewerForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ExportGraphOptionsForm.resx">
-      <DependentUpon>ExportGraphOptionsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpenConnectionForm.resx">
-      <DependentUpon>OpenConnectionForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VisualiseGraphForm.resx">
-      <DependentUpon>VisualiseGraphForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GraphViewerForm.resx">
-      <DependentUpon>GraphViewerForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ExportResultSetOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ExportResultSetOptionsForm.Designer.cs">
+      <DependentUpon>ExportResultSetOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ResultSetViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ResultSetViewerForm.Designer.cs">
+      <DependentUpon>ResultSetViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ExportGraphOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ExportGraphOptionsForm.Designer.cs">
+      <DependentUpon>ExportGraphOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="OpenConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OpenConnectionForm.Designer.cs">
+      <DependentUpon>OpenConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="VisualiseGraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VisualiseGraphForm.Designer.cs">
+      <DependentUpon>VisualiseGraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="GraphViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GraphViewerForm.Designer.cs">
+      <DependentUpon>GraphViewerForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\core\net40\dotNetRDF.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ExportResultSetOptionsForm.resx">
+      <DependentUpon>ExportResultSetOptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResultSetViewerForm.resx">
+      <DependentUpon>ResultSetViewerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ExportGraphOptionsForm.resx">
+      <DependentUpon>ExportGraphOptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="OpenConnectionForm.resx">
+      <DependentUpon>OpenConnectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="VisualiseGraphForm.resx">
+      <DependentUpon>VisualiseGraphForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GraphViewerForm.resx">
+      <DependentUpon>GraphViewerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

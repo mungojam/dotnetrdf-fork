@@ -1,19 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D381CE62-3B23-4BFE-847B-912F7992075B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VDS.RDF.Utilities.Editor</RootNamespace>
-    <AssemblyName>rdfEditor.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
+    <TargetFramework>net40</TargetFramework>
+    <FileUpgradeFlags />
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
@@ -31,90 +22,30 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\dotnetrdf\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AssemblyTitle>rdfEditor Core</AssemblyTitle>
+    <Company>Visual Design Studios</Company>
+    <Product>rdfEditor.Core</Product>
+    <Description>Core APIs for building an RDF Editor</Description>
+    <Copyright>Copyright © dotNetRDF Project 2011-2012</Copyright>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\rdfEditor.Core.XML</DocumentationFile>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <DocumentationFile>bin\$(Configuration)\rdfEditor.Core.XML</DocumentationFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AutoComplete\AutoCompleteDefinition.cs" />
-    <Compile Include="AutoComplete\AutoCompleteManager.cs" />
-    <Compile Include="AutoComplete\AutoCompleteState.cs" />
-    <Compile Include="AutoComplete\BaseAutoCompleter.cs" />
-    <Compile Include="AutoComplete\Data\BaseCompletionData.cs" />
-    <Compile Include="AutoComplete\Data\BlankNodeData.cs" />
-    <Compile Include="AutoComplete\Data\ICompletionData.cs" />
-    <Compile Include="AutoComplete\Data\KeywordData.cs" />
-    <Compile Include="AutoComplete\Data\BaseDeclarationData.cs" />
-    <Compile Include="AutoComplete\Data\NewBlankNodeData.cs" />
-    <Compile Include="AutoComplete\Data\DefaultPrefixDeclarationData.cs" />
-    <Compile Include="AutoComplete\Data\PrefixCompletionData.cs" />
-    <Compile Include="AutoComplete\Data\QNameData.cs" />
-    <Compile Include="AutoComplete\Data\VariableData.cs" />
-    <Compile Include="AutoComplete\IAutoCompleter.cs" />
-    <Compile Include="AutoComplete\NamespaceTerm.cs" />
-    <Compile Include="AutoComplete\Notation3AutoCompleter.cs" />
-    <Compile Include="AutoComplete\NTriplesAutoCompleter.cs" />
-    <Compile Include="AutoComplete\SparqlAutoCompleter.cs" />
-    <Compile Include="AutoComplete\SparqlUpdateAutoCompleter.cs" />
-    <Compile Include="AutoComplete\TermDetectionHandler.cs" />
-    <Compile Include="AutoComplete\TurtleAutoCompleter.cs" />
-    <Compile Include="AutoComplete\Vocabularies\VocabularyDefinition.cs" />
-    <Compile Include="BaseTextEditorAdaptor.cs" />
-    <Compile Include="Document.cs" />
-    <Compile Include="DocumentEvents.cs" />
-    <Compile Include="DocumentManager.cs" />
     <None Include="EditorManager.cs" />
-    <Compile Include="Editor.cs" />
-    <Compile Include="FindAndReplace.cs" />
-    <Compile Include="GlobalOptions.cs" />
-    <Compile Include="ITextEditorAdaptor.cs" />
-    <Compile Include="ITextEditorAdaptorFactory.cs" />
-    <Compile Include="AutoComplete\OffsetScopedNamespaceMapper.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Selection\BaseSelector.cs" />
-    <Compile Include="Selection\DefaultSelector.cs" />
-    <Compile Include="Selection\ISymbolSelector.cs" />
-    <Compile Include="Selection\WhiteSpaceSelector.cs" />
-    <Compile Include="Syntax\SyntaxDefinition.cs" />
-    <Compile Include="Syntax\SyntaxExtensions.cs" />
-    <Compile Include="Syntax\SyntaxManager.cs" />
-    <Compile Include="TextEditorEvents.cs" />
-    <Compile Include="VisualOptions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\core\net40\dotNetRDF.csproj">
-      <Project>{BFBAC159-1E60-4D03-8ACA-D34E31EB83BF}</Project>
-      <Name>dotNetRDF</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\core\net40\dotNetRDF.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AutoComplete\Vocabularies\xsd.ttl" />
@@ -141,29 +72,6 @@
     <EmbeddedResource Include="AutoComplete\Vocabularies\vs.ttl" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
+    <Compile Remove="EditorManager.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
